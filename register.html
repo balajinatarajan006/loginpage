@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Scholarship Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="login-box">
+
+<h2>Create Account</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="text" id="regno" placeholder="Register Number">
+
+<input type="text" id="mobile" placeholder="Mobile Number">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+<button onclick="register()">Register</button>
+
+<div class="bottom-text">
+Already have an account?
+</div>
+
+<a href="index.html" class="register-btn">
+Back to Login
+</a>
+
+<p id="registerMessage"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function register(){
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let regno=document.getElementById("regno").value.trim();
+let mobile=document.getElementById("mobile").value.trim();
+let password=document.getElementById("password").value;
+let confirm=document.getElementById("confirmPassword").value;
+
+if(name=="" || email=="" || regno=="" || mobile=="" || password=="" || confirm==""){
+
+document.getElementById("registerMessage").innerHTML="Please fill all fields.";
+return;
+
+}
+
+if(password!=confirm){
+
+document.getElementById("registerMessage").innerHTML="Passwords do not match.";
+return;
+
+}
+
+let user={
+
+name:name,
+email:email,
+regno:regno,
+mobile:mobile,
+password:password
+
+};
+
+localStorage.setItem("student",JSON.stringify(user));
+
+alert("Registration Successful!");
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
