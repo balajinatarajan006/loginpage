@@ -1,18 +1,51 @@
-function login(){
+// =========================
+// LOGIN FUNCTION
+// =========================
 
-    let username=document.getElementById("username").value.trim();
+function login() {
 
-    let password=document.getElementById("password").value.trim();
+    let email = document.getElementById("loginEmail").value.trim();
+    let password = document.getElementById("loginPassword").value;
 
-    if(username!=="" && password!==""){
+    let user = JSON.parse(localStorage.getItem("student"));
 
-        window.location.href="welcome.html";
+    if (user == null) {
+        document.getElementById("loginMessage").innerHTML =
+            "No account found. Please register first.";
+        return;
+    }
+
+    if (email === user.email && password === user.password) {
+
+        localStorage.setItem("loggedUser", JSON.stringify(user));
+
+        window.location.href = "welcome.html";
+
+    } else {
+
+        document.getElementById("loginMessage").innerHTML =
+            "Invalid Email or Password.";
 
     }
 
-    else{
+}
 
-        document.getElementById("message").innerHTML="Please enter Email and Password.";
+
+// =========================
+// SHOW PASSWORD (OPTIONAL)
+// =========================
+
+function togglePassword(id) {
+
+    let input = document.getElementById(id);
+
+    if (input.type === "password") {
+
+        input.type = "text";
+
+    } else {
+
+        input.type = "password";
 
     }
 
