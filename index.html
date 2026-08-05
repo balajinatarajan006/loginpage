@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,48 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="login-card">
+        <div class="left-panel">
+            <h1>Scholarship Management System</h1>
+            <p>
+                A simple portal for students to register and securely access
+                scholarship services.
+            </p>
+        </div>
 
-        <h1>Scholarship Management System</h1>
-        <p class="subtitle">Student Login Portal</p>
+        <div class="login-box">
 
-        <input type="email" id="username" placeholder="Email Address">
+            <h2>Student Login</h2>
 
-        <input type="password" id="password" placeholder="Password">
+            <input type="email" id="loginEmail" placeholder="Email Address">
 
-        <button onclick="login()">Login</button>
+            <input type="password" id="loginPassword" placeholder="Password">
 
-        <p class="new-user">New User?</p>
+            <button onclick="login()">Login</button>
 
-        <a href="#" class="register-btn">Register New User</a>
+            <div class="bottom-text">
+                Don't have an account?
+            </div>
 
-        <p id="message"></p>
+            <a href="register.html" class="register-btn">
+                Register New User
+            </a>
+
+            <p id="loginMessage"></p>
+
+        </div>
 
     </div>
 
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
