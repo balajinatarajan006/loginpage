@@ -1,9 +1,19 @@
 function login(){
-const u=document.getElementById('username').value.trim();
-const p=document.getElementById('password').value.trim();
-if(u!=='' && p!==''){
-window.location.href='welcome.html';
-}else{
-document.getElementById('message').innerText='Please enter username and password.';
-}
+
+    let username=document.getElementById("username").value.trim();
+
+    let password=document.getElementById("password").value.trim();
+
+    if(username!=="" && password!==""){
+
+        window.location.href="welcome.html";
+
+    }
+
+    else{
+
+        document.getElementById("message").innerHTML="Please enter Email and Password.";
+
+    }
+
 }
